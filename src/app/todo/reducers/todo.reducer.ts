@@ -1,4 +1,5 @@
-import {TodoActions, TodoActionTypes} from '../actions/todo.actions';
+import { Action, createReducer, on } from '@ngrx/store';
+import * as TodoActions from '../actions/todo.actions';
 
 export const todoFeatureKey = 'todo';
 
@@ -15,13 +16,8 @@ export const initialState: State = {
   items: []
 };
 
-export function reducer(state = initialState, action: TodoActions): State {
-  switch (action.type) {
+export const reducer = createReducer(
+  initialState,
 
-    case TodoActionTypes.LoadTodos:
-      return state;
-
-    default:
-      return state;
-  }
-}
+  on(TodoActions.loadTodos, state => state),
+);

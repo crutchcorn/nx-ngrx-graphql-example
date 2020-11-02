@@ -1,12 +1,5 @@
-import { Action } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 
-export enum TodoActionTypes {
-  LoadTodos = '[Todo] Load Todos',
-}
-
-export class LoadTodos implements Action {
-  readonly type = TodoActionTypes.LoadTodos;
-}
-
-
-export type TodoActions = LoadTodos;
+export const loadTodos = createAction(
+  '[Todo] Load Todos'
+);
