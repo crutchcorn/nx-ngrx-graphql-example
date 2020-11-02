@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "NgRxTest"
+    }
+  },
+  "defaultProject": "NgRxTest",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
