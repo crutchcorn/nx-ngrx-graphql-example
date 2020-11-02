@@ -2,3 +2,4 @@
 <ul>
   <li *ngFor="let item of (list$ | async)">{{item.name}}</li>
 </ul>
+<button (click)="addItem()">Add item</button>

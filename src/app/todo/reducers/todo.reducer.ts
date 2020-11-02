@@ -1,12 +1,8 @@
-import { Action, createReducer, on } from '@ngrx/store';
+import {Action, createReducer, on} from '@ngrx/store';
 import * as TodoActions from '../actions/todo.actions';
+import {TodoItem} from '../model/todo.model';
 
 export const todoFeatureKey = 'todo';
-
-interface TodoItem {
-  name: string;
-  id: string;
-}
 
 export interface State {
   items: TodoItem[];
@@ -20,4 +16,10 @@ export const reducer = createReducer(
   initialState,
 
   on(TodoActions.loadTodos, state => state),
+  on(TodoActions.addTodo, (state, action) => {
+    return {
+      ...state,
+      items: [...state.items, action.item]
+    };
+  })
 );
