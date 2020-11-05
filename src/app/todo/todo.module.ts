@@ -8,13 +8,16 @@ import { EffectsModule } from '@ngrx/effects';
 import { TodoEffects } from './effects/todo.effects';
 import { TodoComponent } from './todo/todo.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { TodoViewComponent } from './todo-view/todo-view.component';
+import {SharedModule} from '../shared/shared.module';
 
 
 @NgModule({
-  declarations: [TodoComponent, TodoListComponent],
+  declarations: [TodoComponent, TodoListComponent, TodoViewComponent],
   imports: [
     CommonModule,
     TodoRoutingModule,
+    SharedModule,
     StoreModule.forFeature(fromTodo.todoFeatureKey, fromTodo.reducer),
     EffectsModule.forFeature([TodoEffects])
   ]

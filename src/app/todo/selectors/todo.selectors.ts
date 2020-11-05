@@ -9,3 +9,8 @@ export const selectTodoItems = createSelector(
   selectTodoState,
   (state: fromTodo.State) => state.items
 );
+
+export const selectTodoItemById = createSelector(
+  selectTodoItems,
+  (items, props) => items.find(todoItem => todoItem.id === props.id)
+);
