@@ -15,7 +15,6 @@ export const initialState: State = {
 export const reducer = createReducer(
   initialState,
 
-  on(TodoActions.loadTodos, state => state),
   on(TodoActions.addTodo, (state, action) => {
     return {
       ...state,
