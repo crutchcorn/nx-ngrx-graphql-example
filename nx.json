@@ -1,0 +1,37 @@
+{
+  "npmScope": "nx-ngrx-graphql-example",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "workspace.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.base.json": "*",
+    "tslint.json": "*",
+    ".eslintrc.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "projects": {
+    "apollo-express-example": {
+      "tags": []
+    },
+    "ngrx-apollo-example": {
+      "tags": []
+    },
+    "ngrx-apollo-example-e2e": {
+      "tags": [],
+      "implicitDependencies": ["ngrx-apollo-example"]
+    }
+  }
+}
