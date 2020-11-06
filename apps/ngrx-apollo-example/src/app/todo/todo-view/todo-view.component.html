@@ -1,7 +1,7 @@
 <ng-container *reExportr="(todo$ | async) as todo">
   <ng-container *reExportr="vm$ | async as vm">
     <h1>Todo Details</h1>
-    <p>{{todo?.name}}</p>
+    <p>{{todo?.title}}</p>
     <textarea [value]="vm.description" (change)="setDescription($event.target.value)"></textarea>
     <p>{{vm.description}}</p>
   </ng-container>

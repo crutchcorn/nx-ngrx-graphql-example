@@ -4,7 +4,6 @@ import { ComponentStore } from '@ngrx/component-store';
 export interface TodoViewState {
   description: string;
   creatorName: string;
-  metadata: Record<string, string>;
 }
 
 @Injectable()
@@ -13,8 +12,7 @@ export class TodoViewStore extends ComponentStore<TodoViewState> {
     // set defaults
     super({
       description: '',
-      creatorName: '',
-      metadata: {},
+      creatorName: ''
     });
   }
   // *********** Updaters *********** //

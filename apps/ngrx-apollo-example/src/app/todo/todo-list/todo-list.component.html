@@ -1,5 +1,5 @@
 <h1>Todo List</h1>
 <ul>
-  <li *ngFor="let item of (list$ | async)"><a [routerLink]="'./' + item.id">{{item.name}}</a></li>
+  <li *ngFor="let item of (list$ | async)"><a [routerLink]="'./' + item.id">{{item.title}}</a></li>
 </ul>
 <button (click)="addItem()">Add item</button>

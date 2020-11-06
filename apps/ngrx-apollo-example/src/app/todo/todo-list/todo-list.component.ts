@@ -20,7 +20,7 @@ export class TodoListComponent {
     this.store.dispatch(addTodo({
       item: {
         id: `${this.id++}`,
-        name: 'Testing 123'
+        title: 'Testing 123'
       }
     }));
   }
