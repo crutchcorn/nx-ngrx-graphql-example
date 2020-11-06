@@ -1,6 +1,7 @@
 module.exports = {
   projects: [
-    '<rootDir>/apps/apollo-express-example',
-    '<rootDir>/apps/ngrx-apollo-example',
+    '<rootDir>/apps/ngrx-graphql-example',
+    '<rootDir>/apps/api',
+    '<rootDir>/libs/api-interfaces',
   ],
 };
