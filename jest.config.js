@@ -3,5 +3,6 @@ module.exports = {
     '<rootDir>/apps/ngrx-graphql-example',
     '<rootDir>/apps/api',
     '<rootDir>/libs/api-interfaces',
+    '<rootDir>/libs/data-access',
   ],
 };

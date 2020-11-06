@@ -188,6 +188,38 @@
           }
         }
       }
+    },
+    "data-access": {
+      "projectType": "library",
+      "root": "libs/data-access",
+      "sourceRoot": "libs/data-access/src",
+      "prefix": "nx-ngrx-graphql-example",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/data-access/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "generate": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "npx graphql-codegen --config libs/data-access/codegen.yml"
+              }
+            ]
+          }
+        }
+      },
+      "schematics": {}
     }
   },
   "cli": {

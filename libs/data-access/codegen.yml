@@ -1,0 +1,10 @@
+overwrite: true
+# You must first run `npm run start:server` to generate this file
+schema: "dist/schema/schema.gql"
+generates:
+  libs/data-access/src/lib/generated/generated.ts:
+    documents: "libs/data-access/src/lib/graphql/**/*.graphql"
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-apollo-angular"

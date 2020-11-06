@@ -1,0 +1,25 @@
+fragment TodoFields on Todos {
+  id
+  title
+  description
+  creatorName
+}
+
+query getTodoList {
+  allTodos {
+    id
+    title
+  }
+}
+
+query getTodoById($id: String!) {
+  getTodo(id: $id) {
+    ...TodoFields
+  }
+}
+
+mutation addSet($todo: TodoInput!) {
+  createTodo(todo: $todo) {
+    ...TodoFields
+  }
+}

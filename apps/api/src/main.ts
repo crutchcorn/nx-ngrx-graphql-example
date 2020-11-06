@@ -9,6 +9,9 @@ import { ApolloServer } from 'apollo-server-express';
 import { Resolvers } from './app/schema/Resolvers';
 import { buildSchema } from 'type-graphql';
 import { init_db } from './app/database/init_db';
+import { resolve } from 'path';
+
+export const schemaResolvers = [Resolvers] as const;
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -20,7 +23,9 @@ async function bootstrap() {
   await init_db();
 
   const schema = await buildSchema({
-    resolvers: [Resolvers],
+    resolvers: schemaResolvers,
+    // The file will be in the `dist/schema` directory
+    emitSchemaFile: resolve(__dirname, '../../schema', 'schema.gql')
   });
 
   const apolloServer = new ApolloServer({ schema });

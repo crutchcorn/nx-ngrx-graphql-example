@@ -11,6 +11,7 @@ export class TypeOrmService implements TypeOrmOptionsFactory {
       // config options from "upstream"
       // @see https://github.com/chnirt/nestjs-graphql-best-practice/blob/cicd/src/config/typeorm/index.ts
       type: 'sqlite' as const,
+      // This will end up under `dist/database`
       database: resolve(__dirname, '../../database/database.sqlite3'),
       entities: [Todos],
 		}
